@@ -1,0 +1,36 @@
+<html><head>
+    	<title>jauns</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <h1>Gaidot dzimšanas dienu...</h1>
+	<hr>
+	<form>
+			<h3>Ievadi pilnu datumu, kad Tev būs tuvākā dzimšanas diena</h3>
+            <p>gads</p>
+            <input type="text" id="gads" name="gads">
+            <p>mēnesis</p>
+            <input type="text" id="menesis" name="menesis">
+            <p>diena</p>
+            <input type="text" id="datums" name="datums">
+            <input type="button" name="poga" value="Aprēķināt dienu skaitu līdz dzimšanas dienai" onclick="laiks();">
+
+			<h3>Līdz svētkiem atlikušas             
+            <input type="text" id="dienas" name="dienas">
+            <p>dienas : ))</p>
+	
+
+        <script>
+            function laiks(){
+                var day = 1000 * 60 * 60 * 24;
+                var now = new Date(); 
+                var date = new Date(document.getElementById("gads").value, document.getElementById("menesis").value, document.getElementById("datums").value);
+
+                var res = (Math.round(date.getTime()-now.getTime()) / (day) + 1).toFixed(0);
+                document.getElementById("dienas").value = res;
+            }
+        </script>
+
+
+</h3></form></body></html>
